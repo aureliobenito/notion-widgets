@@ -1,5 +1,7 @@
 #countdown {
   white-space:nowrap;
+  width: 190px;
+  margin: auto;
 }
 
 .flip-clock {
