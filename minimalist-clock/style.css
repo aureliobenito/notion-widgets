@@ -1,0 +1,113 @@
+#countdown {
+  white-space:nowrap;
+}
+
+.flip-clock {
+  display: inline-block;
+  margin-right: 7px;
+  height: 110px;
+  min-width: 95px;
+  perspective: 240px;
+  perspective-origin: 50% 50%;
+}
+
+.flip-clock div{
+  position:      absolute;
+  border:        2px solid #555;
+  color:         #555;
+  background:    #FFF;
+  min-width:     86px;
+  height:        70px;
+  font-size:     60px;
+  font-family: monospace;
+  text-align:    center;
+  line-height:   135px;
+  overflow:      hidden;
+  -moz-box-shadow:    3px 3px 3px #777;
+  -webkit-box-shadow: 3px 3px 3px #777;
+  box-shadow:         3px 3px 3px #777;
+}
+
+.week-day {
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  top: 60px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.flip-top {
+  border-radius: 9px 9px 0px 0px;
+  top: 0px;
+
+}
+
+.flip-bottom {
+  border-radius: 0px 0px 9px 9px;
+  top: 70px;
+  border-top: 2px solid transparent;
+  position: relative;
+}
+.flip-bottom span{
+  display: block;
+  margin-top: -70px;
+}
+
+.flip-front {
+  z-index: 999;
+}
+
+.flip-back {
+  z-index: 998;
+}
+
+.flip-top.flip-front{
+  transform-origin: 50% 100%;
+}
+
+.flip-bottom.flip-front{
+  transform-origin: 50% 0%;
+}
+
+.flip-top-animate {
+  animation-name: fliptop;
+  animation-timing-function: ease-in;
+  animation-duration: 0.4s;
+}
+
+.flip-bottom-animate {
+  animation-name: flipbottom;
+  animation-timing-function: ease-out;
+  animation-duration: 0.4s;
+}
+
+@keyframes fliptop {
+    0%   {
+      transform: rotateX(0deg);
+    }
+    100% {
+      transform: rotateX(-90deg);
+    }
+}
+
+@keyframes flipbottom {
+    0%   {
+      transform: rotateX(90deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
+}
+
+/* Start of Flip Clock linear CSS */
+.flipclock-linear .flip-top-animate {
+  animation-timing-function: linear;
+  animation-duration: 0.2s;
+}
+
+.flipclock-linear .flip-bottom-animate {
+  animation-timing-function: linear;
+  animation-duration: 0.2s;
+}
+/* End of Flip Clock linear CSS */
